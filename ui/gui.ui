@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>419</width>
-    <height>244</height>
+    <width>426</width>
+    <height>333</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -89,39 +89,18 @@ border-radius: 30px;
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="1" column="4">
-       <widget class="QPushButton" name="settingsButton">
-        <property name="text">
-         <string/>
+      <item row="1" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-        <property name="icon">
-         <iconset resource="../graphic/icons.qrc">
-          <normaloff>:/settings.png</normaloff>:/settings.png</iconset>
-        </property>
-        <property name="iconSize">
+        <property name="sizeHint" stdset="0">
          <size>
-          <width>64</width>
-          <height>64</height>
+          <width>40</width>
+          <height>20</height>
          </size>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="acceptButton">
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../graphic/icons.qrc">
-          <normaloff>:/ack.png</normaloff>:/ack.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>64</width>
-          <height>64</height>
-         </size>
-        </property>
-       </widget>
+       </spacer>
       </item>
       <item row="1" column="3">
        <widget class="QPushButton" name="addButton">
@@ -160,18 +139,39 @@ border-radius: 30px;
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="acceptButton">
+        <property name="text">
+         <string/>
         </property>
-        <property name="sizeHint" stdset="0">
+        <property name="icon">
+         <iconset resource="../graphic/icons.qrc">
+          <normaloff>:/ack.png</normaloff>:/ack.png</iconset>
+        </property>
+        <property name="iconSize">
          <size>
-          <width>40</width>
-          <height>20</height>
+          <width>64</width>
+          <height>64</height>
          </size>
         </property>
-       </spacer>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QPushButton" name="settingsButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../graphic/icons.qrc">
+          <normaloff>:/settings.png</normaloff>:/settings.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>64</width>
+          <height>64</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="logo">
@@ -202,13 +202,59 @@ border-radius: 30px;
     </widget>
    </item>
    <item>
-    <widget class="QTableView" name="tableView"/>
+    <widget class="QComboBox" name="comboBox"/>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="treeWidget">
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScroll">
+      <bool>true</bool>
+     </property>
+     <property name="autoExpandDelay">
+      <number>-1</number>
+     </property>
+     <property name="indentation">
+      <number>20</number>
+     </property>
+     <property name="rootIsDecorated">
+      <bool>true</bool>
+     </property>
+     <property name="itemsExpandable">
+      <bool>true</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">2</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">3</string>
+      </property>
+     </column>
+    </widget>
    </item>
   </layout>
  </widget>
  <resources>
   <include location="../graphic/icons.qrc"/>
-  <include location="graphic/icons.qrc"/>
+  <include location="../graphic/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

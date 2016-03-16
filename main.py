@@ -13,10 +13,11 @@ if __name__ == "__main__":
 
     ui = MainWindow()
     ui.show()
-    #ipstaticchanger("192.168.1.1", "255.255.255.0")
+    #ip_static_changer("192.168.1.1", "255.255.255.0")
     try:
-        ipdhcp()
+        device_list = get_network_device_list()
     except:
-        raise print("asdasd")
-
+        raise print("Something goes wrong!")
+    ui.add_device(device_list)
+    #ui.add_device(device_list)
     app.exec_()
