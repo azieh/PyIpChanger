@@ -21,6 +21,4 @@ def get_network_device_list():
     active_network_device_list = []
     for i in range(0, active_network_device_number):
         active_network_device_list.append([str(i), nic_config[i].Description])
-        print(nic_config[i])
-    print(active_network_device_list)
     return active_network_device_list

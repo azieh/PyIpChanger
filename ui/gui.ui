@@ -230,6 +230,12 @@ border-radius: 30px;
      <property name="itemsExpandable">
       <bool>true</bool>
      </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="animated">
+      <bool>false</bool>
+     </property>
      <property name="columnCount">
       <number>3</number>
      </property>
