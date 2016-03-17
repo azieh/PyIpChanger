@@ -13,9 +13,9 @@ def connections():
 
 
 def tree_list_update(item):
+        client_list = [[item.text(0), item.text(1), item.text(2)]]
         write_json([item.text(0), item.text(1), item.text(2)])
-        clients_list = read_json()
-        ui.add_line_parameters_data(clients_list)
+        ui.add_line_parameters_data(client_list)
         return [item.text(0), item.text(1), item.text(2)]
 
 if __name__ == "__main__":
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     connections()
     device_list = get_network_device_list()
     ui.add_device(device_list)
-    write_json(["M1", "10.10.0.1", "255.255.0.0"])
+    ip_static_changer()
     clients_list = read_json()
     ui.add_line_parameters_data(clients_list)
     app.exec_()

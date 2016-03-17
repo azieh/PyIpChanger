@@ -19,6 +19,7 @@ def get_network_device_list():
     nic_config = wmi.WMI().Win32_NetworkAdapterConfiguration(IPEnabled=True)
     active_network_device_number = len(nic_config)
     active_network_device_list = []
+    print(nic_config)
     for i in range(0, active_network_device_number):
         active_network_device_list.append([str(i), nic_config[i].Description])
     return active_network_device_list

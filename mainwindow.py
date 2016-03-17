@@ -12,8 +12,6 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
         self.connections()
         self.treeWidget.setSortingEnabled(True)
 
-
-
     def connections(self):
         self.closeButton.clicked.connect(self.close)
 
