@@ -1,7 +1,7 @@
 <RCC>
     <qresource>
         <file>logo.png</file>
-        <file>settings.png</file>
+        <file>dhcp.png</file>
 	<file>close.png</file>
 	<file>add.png</file>
 	<file>ack.png</file>

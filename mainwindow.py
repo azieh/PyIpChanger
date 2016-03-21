@@ -12,6 +12,9 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
         self.connections()
         self.treeWidget.setSortingEnabled(True)
 
+        self.treeWidget.setColumnCount(3)
+        self.treeWidget.setHeaderLabels(["Line", "Ip", "Subnet"])
+
     def connections(self):
         self.closeButton.clicked.connect(self.close)
 
@@ -20,9 +23,14 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
             self.comboBox.addItem(element[0] + ": " + element[1])
 
     def add_line_parameters_data(self, elements_list):
-        self.treeWidget.setColumnCount(3)
-        self.treeWidget.setHeaderLabels(["Line", "Ip", "Subnet"])
 
+        self.treeWidget.clear()
+        '''
+        for element in elements_list:
+            item = self.treeWidget.findItems(element[0], Qt.MatchExactly, int(0))
+            if len(item) >= 0:
+                break
+        '''
         for element in elements_list:
             tree_widget_data = QTreeWidgetItem(element)
             tree_widget_data.setFlags(Qt.ItemIsEditable |
