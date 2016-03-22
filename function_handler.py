@@ -3,7 +3,10 @@ from ipchanger import IpChanger
 from json_handler import *
 
 
-class FunctionHandler():
+class FunctionHandler:
+    """Function handler
+    Place to connect classes interfaces together
+    """
     def __init__(self):
         self.ui = MainWindow()
         self.ipChanger = IpChanger()

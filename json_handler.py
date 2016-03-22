@@ -1,8 +1,8 @@
 import json
 
-
-def write_json(client):
-    """example = {
+"""
+Example to init some JSON list
+example = {
         "M1": [
             {
                 "Ip": "10.10.194.2",
@@ -17,11 +17,19 @@ def write_json(client):
         ]
     }
     """
+
+
+def write_json(client):
+    """
+    Write JSON file a network card parameter for each line
+    :param client: list of client parameter [name of line, ip, subnet]
+    :return: null
+    """
     append_data = {
             client[0]: [
                 {
                     "Ip": client[1],
-                    "Netmask": client[2]
+                    "Subnet": client[2]
                 }
             ]
         }
@@ -39,13 +47,23 @@ def write_json(client):
 
 def read_json():
 
+    """
+    Read JSON file
+    :return:
+    """
+    clients_list = []
     with open('data.json') as json_data:
-        data = json.load(json_data)
-        json_data.close()
-        clients_list = []
+        try:
+            data = json.load(json_data)
+            json_data.close()
+        except(ValueError,):
+            print("Json file is empty or something goes wrong")
+            clients_list.append(['Null', 'Null', 'Null'])
+            return clients_list
+
         for item in data:
             parameters = data[item]
             ip = parameters[0]['Ip']
-            netmask = parameters[0]['Netmask']
-            clients_list.append([item, ip, netmask])
+            subnet = parameters[0]['Subnet']
+            clients_list.append([item, ip, subnet])
     return clients_list

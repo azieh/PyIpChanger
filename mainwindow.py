@@ -25,12 +25,12 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
     def add_line_parameters_data(self, elements_list):
 
         self.treeWidget.clear()
-        '''
-        for element in elements_list:
-            item = self.treeWidget.findItems(element[0], Qt.MatchExactly, int(0))
-            if len(item) >= 0:
-                break
-        '''
+
+        # for element in elements_list:
+        #    item = self.treeWidget.findItems(element[0], Qt.MatchExactly, int(0))
+        #    if len(item) >= 0:
+        #        break
+
         for element in elements_list:
             tree_widget_data = QTreeWidgetItem(element)
             tree_widget_data.setFlags(Qt.ItemIsEditable |
