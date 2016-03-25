@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "main.py", line 4, in <module>
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1191, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1161, in _load_backward_compatible
+  File "C:\Python34\lib\site-packages\zipextimporter.py", line 86, in load_module
+    return zipimport.zipimporter.load_module(self, fullname)
+  File "D:\Py\PyIpChanger\function_handler.py", line 2, in <module>
+    from ipchanger import IpChanger
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1191, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1161, in _load_backward_compatible
+  File "C:\Python34\lib\site-packages\zipextimporter.py", line 86, in load_module
+    return zipimport.zipimporter.load_module(self, fullname)
+  File "D:\Py\PyIpChanger\ipchanger.py", line 1, in <module>
+    import wmi
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1191, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1161, in _load_backward_compatible
+  File "C:\Python34\lib\site-packages\zipextimporter.py", line 86, in load_module
+    return zipimport.zipimporter.load_module(self, fullname)
+  File "C:\Python34\lib\site-packages\wmi.py", line 88, in <module>
+    from win32com.client import GetObject, Dispatch
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1191, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1161, in _load_backward_compatible
+  File "C:\Python34\lib\site-packages\zipextimporter.py", line 86, in load_module
+    return zipimport.zipimporter.load_module(self, fullname)
+  File "C:\Python34\lib\site-packages\win32com\__init__.py", line 6, in <module>
+    import pythoncom
+  File "<frozen importlib._bootstrap>", line 2237, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 2226, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1191, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1161, in _load_backward_compatible
+  File "C:\Python34\lib\site-packages\zipextimporter.py", line 86, in load_module
+    return zipimport.zipimporter.load_module(self, fullname)
+  File "C:\Python34\lib\site-packages\pythoncom.py", line 3, in <module>
+    pywintypes.__import_pywin32_system_module__("pythoncom", globals())
+AttributeError: 'module' object has no attribute '__import_pywin32_system_module__'
+Traceback (most recent call last):
+  File "main.py", line 10, in <module>
+  File "D:\Py\PyIpChanger\function_handler.py", line 17, in __init__
+    self.clients_list = read_json()
+  File "D:\Py\PyIpChanger\json_handler.py", line 55, in read_json
+    with open('data.json') as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'data.json'

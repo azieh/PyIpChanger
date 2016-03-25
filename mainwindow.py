@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from ui import gui
+import gui
 
 
 class MainWindow(QDialog, gui.Ui_PyIpChanger):
@@ -17,6 +17,7 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
 
     def connections(self):
         self.closeButton.clicked.connect(self.close)
+        self.addButton.clicked.connect(self.add_blank_line_parameters)
 
     def add_device(self, elements_list):
         for element in elements_list:
@@ -37,3 +38,14 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
                                       Qt.ItemIsEnabled |
                                       Qt.ItemIsSelectable)
             self.treeWidget.insertTopLevelItem(0, tree_widget_data)
+
+    def add_blank_line_parameters(self):
+        element = ['Null', 'Null', 'Null']
+        tree_widget_data = QTreeWidgetItem(element)
+        tree_widget_data.setFlags(Qt.ItemIsEditable |
+                                  Qt.ItemIsEnabled |
+                                  Qt.ItemIsSelectable)
+        self.treeWidget.insertTopLevelItem(0, tree_widget_data)
+
+    def delete_line_parameter(self):
+        pass
