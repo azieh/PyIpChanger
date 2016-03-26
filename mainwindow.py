@@ -49,3 +49,7 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
 
     def delete_line_parameter(self):
         pass
+
+    def show_warning_message_window(self, text):
+        title = "ERROR"
+        QMessageBox.critical(self, title, text, QMessageBox.Close)

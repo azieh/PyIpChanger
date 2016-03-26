@@ -18,7 +18,7 @@ class IpChanger:
         """
         result = self.nic_config[device].EnableStatic(IPAddress=[ip], SubnetMask=[subnet])
 
-        return result
+        return result[0]
 
     def ip_dhcp(self, device):
         """
@@ -28,7 +28,7 @@ class IpChanger:
         """
         result = self.nic_config[device].EnableDHCP()
 
-        return result
+        return result[0]
 
     def get_network_device_list(self):
         """
