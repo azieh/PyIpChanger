@@ -8,6 +8,9 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
 
     def __init__(self):
         QDialog.__init__(self)
+        dialog_point = QDesktopWidget().availableGeometry(self)
+        self.setWindowFlags(Qt.Dialog | Qt.WindowTitleHint)
+        self.move(int(dialog_point.width() - 440), int(dialog_point.height() - 380))
         self.setupUi(self)
         self.connections()
         self.treeWidget.setSortingEnabled(True)
@@ -18,6 +21,7 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
     def connections(self):
         self.closeButton.clicked.connect(self.close)
         self.addButton.clicked.connect(self.add_blank_line_parameters)
+
 
     def add_device(self, elements_list):
         for element in elements_list:
