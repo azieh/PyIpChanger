@@ -1,6 +1,5 @@
 import wmi
 import nmap
-import time
 
 class IpChanger:
     """

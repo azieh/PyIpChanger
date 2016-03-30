@@ -1,7 +1,6 @@
 from mainwindow import MainWindow
 from ipchanger import IpChanger
 from json_handler import *
-import threading
 
 class FunctionHandler:
     """Function handler

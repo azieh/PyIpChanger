@@ -1,6 +1,5 @@
 import json
-import os
-import stat
+
 """
 Example to init some JSON list
 example = {
