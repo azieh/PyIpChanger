@@ -17,13 +17,6 @@ class IpChanger:
         :param subnet: string of Subnet address what we would to change
         :return: int result of operation
         """
-
-        try:
-            self.nic_config[device].EnableStatic(IPAddress=[ip], SubnetMask=[subnet])
-            time.sleep(5)
-            ip = self.find_free_ip_address(ip)
-        except EnvironmentError:
-            pass
         result = self.nic_config[device].EnableStatic(IPAddress=[ip], SubnetMask=[subnet])
 
         return result[0]
@@ -56,7 +49,7 @@ class IpChanger:
         hosts_list = [(x, nm[x]['status']['state']) for x in nm.all_hosts()]
         hosts_list.sort()
         for host, status in reversed(hosts_list):
-            if status == "down":
+            if status == "down" or status == "up":
                 print('{0}:{1}'.format(host, status))
                 return host
 

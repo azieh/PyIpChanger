@@ -13,10 +13,13 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
         self.move(int(dialog_point.width() - 440), int(dialog_point.height() - 380))
         self.setupUi(self)
         self.connections()
+        self.treeWidget.setContextMenuPolicy(Qt.CustomContextMenu)
         self.treeWidget.setSortingEnabled(True)
-
         self.treeWidget.setColumnCount(3)
         self.treeWidget.setHeaderLabels(["Line", "Ip", "Subnet"])
+        self.delete_client_action = QAction("Delete client", self)
+        self.delete_client_action.setIcon(self.icon2)
+        self.menu = QMenu()
 
     def connections(self):
         self.closeButton.clicked.connect(self.close)
@@ -50,9 +53,6 @@ class MainWindow(QDialog, gui.Ui_PyIpChanger):
                                   Qt.ItemIsEnabled |
                                   Qt.ItemIsSelectable)
         self.treeWidget.insertTopLevelItem(0, tree_widget_data)
-
-    def delete_line_parameter(self):
-        pass
 
     def show_warning_message_window(self, text):
         title = "ERROR"

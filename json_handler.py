@@ -86,7 +86,9 @@ def delete_data(client):
             json_data.close()
         except ValueError:
                 print("Json file is empty or something goes wrong")
-
-        del data[client[0]]
+        try:
+            del data[client[0]]
+        except KeyError:
+            pass
     with open('data.json', 'w') as outfile:
         json.dump(data, outfile)

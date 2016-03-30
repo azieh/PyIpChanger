@@ -23,6 +23,8 @@ class FunctionHandler:
         self.ui.treeWidget.itemChanged.connect(self.tree_list_add_update)
         self.ui.acceptButton.clicked.connect(self.ip_update)
         self.ui.dhcpButton.clicked.connect(self.dhcp_update)
+        self.ui.treeWidget.customContextMenuRequested.connect(self.delete_line_parameter_menu)
+        self.ui.delete_client_action.triggered.connect(self.tree_list_delete_update)
 
     def tree_list_add_update(self, item):
         write_json([item.text(0), item.text(1), item.text(2)])
@@ -57,3 +59,7 @@ class FunctionHandler:
         result = self.ipChanger.ip_dhcp(device)
         if result != 0:
             self.ui.show_warning_message_window("Ip address was not change. Check if u have administrator rights.")
+
+    def delete_line_parameter_menu(self, position):
+        self.ui.menu.addAction(self.ui.delete_client_action)
+        self.ui.menu.exec_(self.ui.treeWidget.viewport().mapToGlobal(position))
